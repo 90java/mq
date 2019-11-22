@@ -1,0 +1,13 @@
+管理界面:rabbitmq-plugins.bat enable rabbitmq_management
+重启服务器：net stop RabbitMQ && net start RabbitMQ
+https://www.rabbitmq.com/getstarted.html
+https://www.rabbitmq.com/tutorials/tutorial-one-java.html
+http://localhost:15672/#/
+-----------
+<dependency>
+  <groupId>com.rabbitmq</groupId>
+  <artifactId>amqp-client</artifactId>
+  <version>5.7.3</version>
+</dependency>
+
+1 "Hello World!"
