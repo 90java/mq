@@ -15,6 +15,9 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        String join = String.join("--", "nnnn","aaa","344");
+        System.out.println(join);
     }
+
+
 }
