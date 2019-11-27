@@ -81,6 +81,8 @@ https://www.cnblogs.com/data2value/p/6220859.html 吞吐量（TPS）、QPS、并
     Exchanges 生产者和消费者一样
 
     根据消费程序中会创建一个自定义的mq
+4. Routing 路由
 
-
-
+    Direct exchange
+        背后路由规则：当routing key 和 binging key 完全匹配
+        Multiple bindings：多重绑定 binging key可以有多个相同的
