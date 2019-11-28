@@ -80,5 +80,18 @@ https://www.cnblogs.com/data2value/p/6220859.html 吞吐量（TPS）、QPS、并
 
     根据消费程序中会创建一个自定义的mq
 
+4.routing 路由
 
+    Exchange  direct 完全匹配
 
+5.topics
+
+    Exchange  topic 规则匹配
+
+    routing_key 必须是单词列表，以点分隔
+
+    * 可以代替一个单词。
+    # 可以替代零个或多个单词。
+
+    routing_key 为一个#   类似fanout
+                不适用* #  类似direct
