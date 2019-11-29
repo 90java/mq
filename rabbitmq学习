@@ -105,3 +105,5 @@ https://www.cnblogs.com/data2value/p/6220859.html 吞吐量（TPS）、QPS、并
         2.该请求被发送到rpc_queue队列。
         3.RPC工作程序（又名：服务器）正在等待该队列上的请求。出现请求时，服务器会使用replyTo字段中的队列来完成工作并将带有结果的消息发送回客户端。
         4.客户端监控出现消息时，它会检查correlationId属性。如果它与请求中的值匹配，则将响应返回给应用程序。
+7.Publisher Confirms
+
