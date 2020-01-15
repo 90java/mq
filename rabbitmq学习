@@ -16,6 +16,22 @@ https://blog.csdn.net/alinshen/article/details/80583214  一个用消息队列 �
 https://www.cnblogs.com/weirdo-lenovo/p/10660671.html RabbitMQ原理图
 https://blog.51cto.com/wyait/1977544 rabbitMQ消息队列原理
 https://www.cnblogs.com/data2value/p/6220859.html 吞吐量（TPS）、QPS、并发数、响应时间（RT）概念
+https://www.jianshu.com/p/b7cc32b94d2a 集群
+注意评论
+第一个模式 很少有人真的主备2个节点 因为通常集群都是3个 你不联通所有节点？
+第二个所谓的模式 就更离谱了 一个通信中同时有同步确认和异步确认 这容易出脏数据
+第三个是标准的集群镜像模式 没啥好说的
+第四个模式这种问题也如第二个那样 容易发生脏的可能
+
+任何非集群间全同步的关联复制 都是要当心出现脏数据的问题的
+https://www.jianshu.com/p/588e1c959f03 集群
+
+面试
+https://blog.csdn.net/jerryDzan/article/details/89183625
+https://www.cnblogs.com/woadmin/p/10537174.html
+https://blog.csdn.net/qq_42629110/article/details/84965084
+https://www.songma.com/news/txtlist_i59918v.html
+
 
 -----------
 <dependency>
@@ -23,6 +39,24 @@ https://www.cnblogs.com/data2value/p/6220859.html 吞吐量（TPS）、QPS、并
   <artifactId>amqp-client</artifactId>
   <version>5.7.3</version>
 </dependency>
+
+
+Broker:它提供一种传输服务,它的角色就是维护一条从生产者到消费者的路线，保证数据能按照指定的方式进行传输,
+Exchange：消息交换机,它指定消息按什么规则,路由到哪个队列。
+Queue:消息的载体,每个消息都会被投到一个或多个队列。
+Binding:绑定，它的作用就是把exchange和queue按照路由规则绑定起来.
+Routing Key:路由关键字,exchange根据这个关键字进行消息投递。
+vhost:虚拟主机,一个broker里可以有多个vhost，用作不同用户的权限分离。
+Producer:消息生产者,就是投递消息的程序.
+Consumer:消息消费者,就是接受消息的程序.
+
+ConnectionFactory（连接管理器）：应用程序与Rabbit之间建立连接的管理器，程序代码中使用。
+Channel（信道）：消息推送使用的通道。
+Exchange（交换器）：用于接受、分配消息。
+Queue（队列）：用于存储生产者的消息。
+RoutingKey（路由键）：用于把生成者的数据分配到交换器上。
+BindingKey（绑定键）：用于把交换器的消息绑定到队列上。
+
 
 1 "Hello World!"
 
